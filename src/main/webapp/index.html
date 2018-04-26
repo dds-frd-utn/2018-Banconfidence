@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Banconfidence</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/disenio.css">
+    </head>
+    <body>
+        <header id="topSection"> 
+            <img class="portada" src="https://pbs.twimg.com/media/DbnCSuaXkAA2KR8.jpg:large" alt="portada biografia deadmau5">
+        </header>
+        <section class="fondo_contenido">   
+                <section class="contenido">
+                    <h1>¿Quiénes somos?</h1>
+                        <p style="font-size: 18px">
+                            <em>Banconfidence</em> es un Banco radicado en Buenos Aires, que proporciona un <strong>Servicio RestFul</strong> totalmente eficiente.
+                        </p>
+
+                        <p>
+                            <em>Entre sus servicios tenemos:</em>
+                            <ol>
+                                <li>Administración de clientes</li>
+                                <li>Administración de cuentas</li>
+                                <li>Administración de movimientos</li>
+                            </ol>
+                        </p>
+                            
+                        <div class="clientes">
+                            <h3>Administración de clientes</h3>
+                            <p><a href="http://localhost:8080/Banconfidence/rest/cliente" target="_blank">Lista de clientes existentes</a></p>
+                            <p>
+                                Si se desea obtener los datos de un cliente en particular, debe también ingresar su id en la dirección:<br/>
+                                <em>http://localhost:8080/Banconfidence/rest/cliente/<strong>{id}</strong></em><br/>
+                                <br/>
+                                Actualmente tenemos solo 2 clientes, ¡pero nuestro Banco está creciendo!
+                                Ellos son Pepe y María, cuyos id son 1 y 2 respectivamente.<br/>
+                                <br/>
+                                <a href="http://localhost:8080/Banconfidence/rest/cliente/1" target="_blank">Datos de Pepe</a><br/>
+                                <a href="http://localhost:8080/Banconfidence/rest/cliente/2" target="_blank">Datos de María</a>
+                            </p>
+                        </div>
+
+                        <div class="cuentas">
+                            <h3>Administración de cuentas</h3>
+                            <p><a href="http://localhost:8080/Banconfidence/rest/cuenta" target="_blank">Lista de cuentas existentes</a></p>
+                            <p>
+                                Si se desea obtener la lista de cuentas asociadas a un determinado cliente, entonces se debe especificar el id del mismo, de la siguiente manera:<br/>
+                                <em>http://localhost:8080/Banconfidence/rest/cuenta/cliente/<strong>{id_cliente}</strong></em><br/>
+                                <br/>
+                                <a href="http://localhost:8080/Banconfidence/rest/cuenta/cliente/1" target="_blank">Cuentas de Pepe</a><br/>
+                                <a href="http://localhost:8080/Banconfidence/rest/cuenta/cliente/2" target="_blank">Cuentas de María</a>
+                            </p>
+                        </div>
+                        
+                        <div class="movimientos">
+                            <h3>Administración de movimientos</h3>
+                            <p>
+                                Si se desea obtener la lista de TODOS los movimientos asociados a una determinada cuenta, entonces se debe especificar el id de la misma, de la siguiente manera:<br/>
+                                <em>http://localhost:8080/Banconfidence/rest/movimiento/cuenta/<strong>{id_cuenta}</strong>/todos</em><br/>
+                                <br/>
+                                <a href="http://localhost:8080/Banconfidence/rest/cuenta/movimiento/cuenta/1/todos" target="_blank">Listar todos los movimientos asociados al id de cuenta 1</a><br/>
+                                <a href="http://localhost:8080/Banconfidence/rest/cuenta/movimiento/cuenta/2/todos" target="_blank">Listar todos los movimientos asociados al id de cuenta 2</a>
+                            </p>
+                            <p>
+                                Por otra parte, si solo interesa saber los últimos 10 movimientos, el formato es el mismo pero debemos reemplazar "<ins>todos</ins>" por "<ins>ultimos</ins>":<br/>
+                                <em>http://localhost:8080/Banconfidence/rest/movimiento/cuenta/<strong>{id_cuenta}</strong>/ultimos</em><br/>
+                                <br/>
+                                <a href="http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/ultimos" target="_blank">Listar los últimos movimientos asociados al id de cuenta 1</a><br/>
+                                <a href="http://localhost:8080/Banconfidence/rest/movimiento/cuenta/2/ultimos" target="_blank">Listar los últimos movimientos asociados al id de cuenta 2</a>
+                            </p>
+                            <p>
+                                Si se desea obtener los movimientos de una cuenta en particular, en un estado específico, se tiene que escribir con el siguiente formato:<br/>
+                                <em>http://localhost:8080/Banconfidence/rest/movimiento/cuenta/<strong>{id_cuenta}</strong>/estado/<strong>{estado}</strong></em><br/>
+                                Los estados se identifican con sus respectivos id, y pueden ser los siguientes:
+                                <ol>
+                                    <li>PENDIENTE</li>
+                                    <li>EN PROCESO</li>
+                                    <li>PROCESADO</li>
+                                    <li>RECHAZADO</li>
+                                </ol>
+                                Entonces, a modo de ejemplo, si deseamos saber los movimientos de la cuenta 2 en el estado 3 (procesado):
+                                <a href="http://localhost:8080/Banconfidence/rest/movimiento/cuenta/2/estado/3" target="_blank">Hacer click aquí</a><br/>
+                                Usted podrá observar que, al ingresar en ese link, la dirección tiene el formato especificado anteriormente.
+                            </p>
+                            <p>
+                                Por otra parte, los movimientos pueden ser de dos tipos, cada uno identificado con su respectivo id:
+                                <ol>
+                                    <li>EXTRACCIÓN</li>
+                                    <li>DEPÓSITO</li>
+                                </ol>
+                                Por lo tanto, si se desea obtener los movimientos de una cuenta en particular, de un tipo específico, se tiene que escribir con el siguiente formato:<br/>
+                                <em>http://localhost:8080/Banconfidence/rest/movimiento/cuenta/<strong>{id_cuenta}</strong>/tipo/<strong>{tipo}</strong></em><br/>
+                                <br/>
+                                Entonces, a modo de ejemplo, si deseamos saber los movimientos de la cuenta 2 del tipo 1 (extracción):
+                                <a href="http://localhost:8080/Banconfidence/rest/movimiento/cuenta/2/tipo/1" target="_blank">Hacer click aquí</a><br/>
+                                Usted podrá observar que al ingresar en ese link, la dirección tiene el formato especificado anteriormente.
+                            </p>
+                        </div>
+                </section>
+        </section>
+
+        <footer><a href="#topSection">Volver al principio</a></footer>
+    </body>
+</html>

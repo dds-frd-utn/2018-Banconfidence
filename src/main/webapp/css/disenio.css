@@ -1,0 +1,42 @@
+.portada {
+    width: 1150px;
+    height: 250px;
+    margin: 20px 93px;
+    border-radius: 10px;
+}
+
+header, .fondo_contenido {
+    background-color:beige;
+    
+}
+
+body {
+    color:black;
+    background-color:beige;
+    font-family: arial;
+}
+
+.contenido{
+    margin: 10px 120px 100px;
+}
+
+h3 {
+    text-align: center;
+}
+
+a[href^="http"] {
+    font-style: italic;
+} 
+
+.clientes, .cuentas, .movimientos {
+    border-style: groove;
+    border-color: gray;
+    border-width: thin;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+}
+
+footer {
+    text-align: center;
+}
