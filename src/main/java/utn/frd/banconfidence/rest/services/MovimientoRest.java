@@ -75,6 +75,13 @@ public class MovimientoRest {
         return ejbMovimientoFacade.movimientosPorCuenta(id);
     }
     
+    @POST
+    @Path("/cuenta/{id_cuenta}/todos")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public void crear(Movimiento movimiento){
+        ejbMovimientoFacade.create(movimiento);
+    }
+    
     // obtener lista de los últimos 10 movimientos de un id de cuenta
     //List<Movimiento> ultimos = new ArrayList<>();
     @GET
