@@ -1,0 +1,48 @@
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+}
+
+.portada {
+  display: block;
+  width: 85%;
+  height: 250px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.contenido {
+    text-align: center;
+    margin: 10px 40px 20px;
+    font-family: Poppins-Regular;
+}
+
+.btn.btn-success {
+    font-size: 18px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    height: 50px;
+    width: 60%;
+    margin: 8px
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+#volver, #salir {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Poppins-Regular;
+}
+
+thead {
+  background-color: lightgray;
+}
