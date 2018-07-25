@@ -3,8 +3,8 @@ var BASEURL = "http://lsi.no-ip.org:7777/2018-Banconfidence";
 
 $(function(){
 	$.ajax({
-		//url: BASEURL + "/rest/cliente/1",
-		url: "http://localhost:8080/Banconfidence/rest/cliente/1",
+		url: BASEURL + "/rest/cliente/1",
+		//url: "http://localhost:8080/Banconfidence/rest/cliente/1",
 		method: "GET",
 		success: function(data) {
 			$("#datos").append("Usted es " + data.nombre + ", su id es " + data.id + " y su CUIL es " + data.cuil);
@@ -114,8 +114,8 @@ $(function(){
 	$("#todos").click(function(){
 		$.fn.esconderBotones();
 		$.ajax({
-			//url: BASEURL + "/rest/movimiento/cuenta/1/todos",
-			url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/todos",
+			url: BASEURL + "/rest/movimiento/cuenta/1/todos",
+			//url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/todos",
 			method: "GET",
 			success: function(data){
 				var h2 = $("<h2/>", {text: "Estos son todos sus movimientos"});
@@ -139,8 +139,8 @@ $(function(){
 	$("#ultimos").click(function(){
 		$.fn.esconderBotones();
 		$.ajax({
-			//url: BASEURL + "/rest/movimiento/cuenta/1/ultimos",
-			url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/ultimos",
+			url: BASEURL + "/rest/movimiento/cuenta/1/ultimos",
+			//url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/ultimos",
 			method: "GET",
 			success: function(data){
 				var h2 = $("<h2/>", {text: "Estos son sus últimos 10 movimientos"});
@@ -164,8 +164,8 @@ $(function(){
 	$("#saldo").click(function(){
 		$.fn.esconderBotones();
 		$.ajax({
-			//url: BASEURL + "/rest/movimiento/cuenta/1/saldo",
-			url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/saldo",
+			url: BASEURL + "/rest/movimiento/cuenta/1/saldo",
+			//url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/saldo",
 			method: "GET",
 			success: function(data){
 				var h2 = $("<h2/>", {text: "Su saldo actual es de: $" + data});
@@ -185,8 +185,8 @@ $(function(){
 		$("#tipo").remove();
 
 		$.ajax({
-			//url: BASEURL + "/rest/movimiento/cuenta/1/tipo/2",
-			url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/tipo/2",
+			url: BASEURL + "/rest/movimiento/cuenta/1/tipo/2",
+			//url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/tipo/2",
 			method: "GET",
 			success: function(data){
 				var h2 = $("<h2/>", {text: "Estos son sus depósitos"});
@@ -213,8 +213,8 @@ $(function(){
 		$("#tipo").remove();
 
 		$.ajax({
-			//url: BASEURL + "/rest/movimiento/cuenta/1/tipo/1",
-			url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/tipo/1",
+			url: BASEURL + "/rest/movimiento/cuenta/1/tipo/1",
+			//url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/tipo/1",
 			method: "GET",
 			success: function(data){
 				var h2 = $("<h2/>", {text: "Estas son sus extracciones"});
@@ -242,8 +242,8 @@ $(function(){
 		$("#estado").remove();
 
 		$.ajax({
-			//url: BASEURL + "/rest/movimiento/cuenta/1/estado/1",
-			url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/estado/1",
+			url: BASEURL + "/rest/movimiento/cuenta/1/estado/1",
+			//url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/estado/1",
 			method: "GET",
 			success: function(data){
 				var h2 = $("<h2/>", {text: "Estos son sus movimientos pendientes"});
@@ -271,8 +271,8 @@ $(function(){
 		$("#estado").remove();
 
 		$.ajax({
-			//url: BASEURL + "/rest/movimiento/cuenta/1/estado/2",
-			url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/estado/2",
+			url: BASEURL + "/rest/movimiento/cuenta/1/estado/2",
+			//url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/estado/2",
 			method: "GET",
 			success: function(data){
 				var h2 = $("<h2/>", {text: "Estos son sus movimientos en proceso"});
@@ -300,8 +300,8 @@ $(function(){
 		$("#estado").remove();
 
 		$.ajax({
-			//url: BASEURL + "/rest/movimiento/cuenta/1/estado/3",
-			url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/estado/3",
+			url: BASEURL + "/rest/movimiento/cuenta/1/estado/3",
+			//url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/estado/3",
 			method: "GET",
 			success: function(data){
 				var h2 = $("<h2/>", {text: "Estos son sus movimientos procesados"});
@@ -329,8 +329,8 @@ $(function(){
 		$("#estado").remove();
 
 		$.ajax({
-			//url: BASEURL + "/rest/movimiento/cuenta/1/estado/4",
-			url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/estado/4",
+			url: BASEURL + "/rest/movimiento/cuenta/1/estado/4",
+			//url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/estado/4",
 			method: "GET",
 			success: function(data){
 				var h2 = $("<h2/>", {text: "Estos son sus movimientos rechazados"});
@@ -420,12 +420,13 @@ $(function() {
 
 		alert("Clickeaste el boton");
 
+                // {"creado":"2018-06-17T14:17:24Z[UTC]","estado":3,"id":20,"idCuenta":1,"importe":2000.0,"tipo":2}
 
 		$.ajax({
-                //url: BASEURL + "/rest/movimiento/cuenta/1/todos",
-                url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/todos",
+                url: BASEURL + "/rest/movimiento/cuenta/1/todos",
+                //url: "http://localhost:8080/Banconfidence/rest/movimiento/cuenta/1/todos",
 	    	type: "POST",
-	    	data: {"cuil":67823,"id":4,"nombre":"Nicolas"},
+	    	data: {"creado":"2018-07-24T14:00:00Z[UTC]","estado":3,"idCuenta":1,"importe":2000.0, "tipo":2},
                 contentType: "application/json",
 	    	success: function() {
 	    		console.log("Movimiento exitoso!");
